@@ -6,8 +6,8 @@
 //
 
 import Foundation
-/// Модель принимающая текст и возвращающая hello, если пришло leoh
-struct GameHelloModel {
+/// Принимает , буквы, возвращает слово
+struct ChecksTheWords {
     var param: String?
     
     func returnText(_ text: String?) -> String? {
