@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Registration View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIKITDZ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RegistrationViewController" customModule="UIKITDZ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,10 +97,10 @@
             </objects>
             <point key="canvasLocation" x="120" y="-23.459715639810426"/>
         </scene>
-        <!--View Controller Cafe Mario-->
+        <!--Cafe Mario View Controller-->
         <scene sceneID="yu2-Ae-VdD">
             <objects>
-                <viewController storyboardIdentifier="CafeMario" id="cKR-Sx-1Mv" customClass="ViewControllerCafeMario" customModule="UIKITDZ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CafeMario" id="cKR-Sx-1Mv" customClass="CafeMarioViewController" customModule="UIKITDZ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XqY-0E-tUx">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

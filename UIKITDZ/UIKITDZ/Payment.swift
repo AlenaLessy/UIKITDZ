@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Класс модели
+/// Класс модели - информация о клиентах и оплате
 final class Payment {
     // Пользователи
     var visitorList = ["AlenaLessy": "Alenka", "Vladimir": "Vladimir", "User123": "123"]

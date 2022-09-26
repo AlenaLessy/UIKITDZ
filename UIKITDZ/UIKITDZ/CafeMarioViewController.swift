@@ -6,22 +6,22 @@
 //
 
 import UIKit
-/// Контроллер кафе Марио, проверяет есть ли бронь, собирает данные клиента
-final class ViewControllerCafeMario: UIViewController {
+/// Экран кафе Марио, проверяет есть ли бронь, собирает данные клиента
+final class CafeMarioViewController: UIViewController {
     // информация о посетителе
     @IBOutlet private weak var lastNameTextField: UITextField!
     @IBOutlet private weak var numberOfGuessTextField: UITextField!
     @IBOutlet private weak var tableNumberTextField: UITextField!
     @IBOutlet private weak var prepaymentSwitch: UISwitch!
     
-    private var prepaymentClient = Payment()
+    private var payment = Payment()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPrepaymentSwitch()
     }
     
-    @IBAction private func invoiceButton(_ sender: Any) {
+    @IBAction private func invoicePaymentAction(_ sender: Any) {
         invoicingOfPaymentAlert()
     }
     //  конфигурация свича предоплаты

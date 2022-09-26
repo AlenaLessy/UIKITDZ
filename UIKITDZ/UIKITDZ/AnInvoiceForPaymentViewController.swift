@@ -21,7 +21,7 @@ final class AnInvoiceForPaymentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         invoiceAmountCalculation()
-        infoList()
+        setTextInLabel()
     }
     
     // Функция вычисления оплаты
@@ -33,7 +33,7 @@ final class AnInvoiceForPaymentViewController: UIViewController {
         }
     }
     
-    private func infoList() {
+    private func setTextInLabel() {
         lastNameLabel.text = lastName
         tableNumberLable.text = tableNumber
         numberOfGuessLabel.text = numberOfGuess

@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		57B5497D28DB544700EC20FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5497C28DB544700EC20FE /* AppDelegate.swift */; };
 		57B5497F28DB544700EC20FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5497E28DB544700EC20FE /* SceneDelegate.swift */; };
-		57B5498128DB544700EC20FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5498028DB544700EC20FE /* ViewController.swift */; };
+		57B5498128DB544700EC20FE /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5498028DB544700EC20FE /* RegistrationViewController.swift */; };
 		57B5498428DB544700EC20FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B5498228DB544700EC20FE /* Main.storyboard */; };
 		57B5498628DB544700EC20FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B5498528DB544700EC20FE /* Assets.xcassets */; };
 		57B5498928DB544700EC20FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B5498728DB544700EC20FE /* LaunchScreen.storyboard */; };
 		57B5499528DC84EC00EC20FE /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5499428DC84EC00EC20FE /* Payment.swift */; };
-		57B5499728DC949E00EC20FE /* ViewControllerCafeMario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5499628DC949E00EC20FE /* ViewControllerCafeMario.swift */; };
+		57B5499728DC949E00EC20FE /* CafeMarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5499628DC949E00EC20FE /* CafeMarioViewController.swift */; };
 		57B5499B28DCDD8900EC20FE /* AnInvoiceForPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5499A28DCDD8900EC20FE /* AnInvoiceForPaymentViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,13 +22,13 @@
 		57B5497928DB544700EC20FE /* UIKITDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKITDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B5497C28DB544700EC20FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57B5497E28DB544700EC20FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		57B5498028DB544700EC20FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		57B5498028DB544700EC20FE /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		57B5498328DB544700EC20FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57B5498528DB544700EC20FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57B5498828DB544700EC20FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57B5498A28DB544700EC20FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57B5499428DC84EC00EC20FE /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
-		57B5499628DC949E00EC20FE /* ViewControllerCafeMario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCafeMario.swift; sourceTree = "<group>"; };
+		57B5499628DC949E00EC20FE /* CafeMarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeMarioViewController.swift; sourceTree = "<group>"; };
 		57B5499A28DCDD8900EC20FE /* AnInvoiceForPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnInvoiceForPaymentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,8 +64,8 @@
 			children = (
 				57B5497C28DB544700EC20FE /* AppDelegate.swift */,
 				57B5497E28DB544700EC20FE /* SceneDelegate.swift */,
-				57B5498028DB544700EC20FE /* ViewController.swift */,
-				57B5499628DC949E00EC20FE /* ViewControllerCafeMario.swift */,
+				57B5498028DB544700EC20FE /* RegistrationViewController.swift */,
+				57B5499628DC949E00EC20FE /* CafeMarioViewController.swift */,
 				57B5499A28DCDD8900EC20FE /* AnInvoiceForPaymentViewController.swift */,
 				57B5499428DC84EC00EC20FE /* Payment.swift */,
 				57B5498228DB544700EC20FE /* Main.storyboard */,
@@ -169,9 +169,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57B5498128DB544700EC20FE /* ViewController.swift in Sources */,
+				57B5498128DB544700EC20FE /* RegistrationViewController.swift in Sources */,
 				57B5497D28DB544700EC20FE /* AppDelegate.swift in Sources */,
-				57B5499728DC949E00EC20FE /* ViewControllerCafeMario.swift in Sources */,
+				57B5499728DC949E00EC20FE /* CafeMarioViewController.swift in Sources */,
 				57B5497F28DB544700EC20FE /* SceneDelegate.swift in Sources */,
 				57B5499B28DCDD8900EC20FE /* AnInvoiceForPaymentViewController.swift in Sources */,
 				57B5499528DC84EC00EC20FE /* Payment.swift in Sources */,
