@@ -21,7 +21,6 @@ final class GameViewController: UIViewController {
              label.textAlignment = .center
              return label
          }()
-    
     private lazy var hiButton: UIButton = {
              let button = UIButton()
              button.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
@@ -31,13 +30,11 @@ final class GameViewController: UIViewController {
              button.addTarget(self, action: #selector(hiButtonAction), for: .touchUpInside)
              return button
          }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSubView()
         
     }
-    
     @objc private func hiButtonAction() {
         let alertController = UIAlertController(title: "Здравствуйте", message: "Введите слово", preferredStyle: .alert)
                let action = UIAlertAction(title: "OK", style: .default) { _ in
@@ -46,11 +43,10 @@ final class GameViewController: UIViewController {
                }
                alertController.addTextField()
                alertController.addAction(action)
-               self.present(alertController, animated: true)
+               present(alertController, animated: true)
            }
-    
     private func configureSubView() {
-        self.view.addSubview(hiButton)
-        self.view.addSubview(gameLabel)
+        view.addSubview(hiButton)
+        view.addSubview(gameLabel)
     }
  }
