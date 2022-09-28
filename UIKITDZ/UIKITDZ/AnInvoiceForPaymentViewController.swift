@@ -26,11 +26,11 @@ final class AnInvoiceForPaymentViewController: UIViewController {
     
     // Функция вычисления оплаты
     private func invoiceAmountCalculation() {
-        if Payment.prepayment == 500 {
+        guard Payment.prepayment == 500
+            else { self.invoicingLabel.text = "Итого: 700 руб"
+                return
+            }
             self.invoicingLabel.text = "Итого: 200 руб"
-        } else {
-            self.invoicingLabel.text = "Итого: 700 руб"
-        }
     }
     
     private func setTextInLabel() {

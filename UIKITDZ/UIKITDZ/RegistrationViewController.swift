@@ -19,11 +19,11 @@ final class RegistrationViewController: UIViewController {
     }
     
     @IBAction private func showPasswordAction(_ sender: Any) {
-        if enretPasswordTextField.isSecureTextEntry {
-            enretPasswordTextField.isSecureTextEntry = false
-        } else {
+        guard enretPasswordTextField.isSecureTextEntry else {
             enretPasswordTextField.isSecureTextEntry = true
+            return
         }
+            enretPasswordTextField.isSecureTextEntry = false
     }
     // кнопка войти + проверка логина и пароля
     @IBAction private func applicationLoginAction(_ sender: Any) {
@@ -46,6 +46,6 @@ final class RegistrationViewController: UIViewController {
         let alertController = UIAlertController(title: "Внимание!", message: text, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Ok", style: .cancel)
         alertController.addAction(alertAction)
-        self.present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
 }

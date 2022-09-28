@@ -26,7 +26,7 @@ final class CafeMarioViewController: UIViewController {
     }
     //  конфигурация свича предоплаты
     private func setupPrepaymentSwitch() {
-        self.prepaymentSwitch.addTarget(
+        prepaymentSwitch.addTarget(
             self,
             action: #selector(switchPrepaymentAction(paramTarget: )),
             for: .valueChanged
@@ -48,7 +48,7 @@ final class CafeMarioViewController: UIViewController {
                                              preferredStyle: .alert)
         let addActionOk = UIAlertAction(title: "Ok", style: .cancel)
         advanceAlert.addAction(addActionOk)
-        self.present(advanceAlert, animated: true)
+        present(advanceAlert, animated: true)
     }
     
     // алерт счета
@@ -68,6 +68,6 @@ final class CafeMarioViewController: UIViewController {
         }
         invoicingAlert.addAction(addActionOk)
         invoicingAlert.addAction(addActionCancel)
-        self.present(invoicingAlert, animated: true)
+        present(invoicingAlert, animated: true)
     }
 }
