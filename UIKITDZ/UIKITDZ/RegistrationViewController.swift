@@ -90,7 +90,6 @@ class RegistrationViewController: UIViewController {
         switcher.isOn = true
         switcher.frame = CGRect(x: 300, y: 500, width: 30, height: 30)
         switcher.tintColor = .gray
-      //  switcher.addTarget(self, action: #selector(switchFaceId), for: .touchDown)
         return switcher
     }()
     
@@ -110,23 +109,23 @@ class RegistrationViewController: UIViewController {
         button.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
         button.frame = CGRect(x: 300, y: 435, width: 30, height: 30)
         button.tintColor = .gray
-       button.addTarget(self, action: #selector(hideTextButtonToggle), for: .touchDown)
+       button.addTarget(self, action: #selector(hideTextButtonToggleAction), for: .touchDown)
         return button
     }()
     
-    @objc private func hideTextButtonToggle() {
-        if self.passwordTextField.isSecureTextEntry {
-            self.passwordTextField.isSecureTextEntry = false
-            self.hideTextButtonAction.setImage(UIImage(systemName: "eye.fill"), for: .normal)
-        } else {
-            self.passwordTextField.isSecureTextEntry = true
-            self.hideTextButtonAction.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+    @objc private func hideTextButtonToggleAction() {
+        guard passwordTextField.isSecureTextEntry else {
+            passwordTextField.isSecureTextEntry = true
+            hideTextButtonAction.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+            return
         }
+            passwordTextField.isSecureTextEntry = false
+            hideTextButtonAction.setImage(UIImage(systemName: "eye.fill"), for: .normal)
     }
     
     @objc private func loginButtonAction() {
         let birthdayVC = BirthDayViewController()
-        self.navigationController?.pushViewController(birthdayVC, animated: true)
+        navigationController?.pushViewController(birthdayVC, animated: true)
     }
     
     override func viewDidLoad() {

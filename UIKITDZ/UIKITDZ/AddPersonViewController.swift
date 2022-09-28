@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+/// расширение для пикера
 extension AddPersonViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
@@ -61,7 +61,6 @@ final class AddPersonViewController: UIViewController {
         button.addTarget(self, action: #selector(cancelAction), for: .touchDown)
         return button
     }()
-    
     private lazy var addButton: UIButton = {
         let button = UIButton()
         button.setTitle("Добавить", for: .normal)
@@ -70,7 +69,6 @@ final class AddPersonViewController: UIViewController {
         button.addTarget(self, action: #selector(saveInformation), for: .touchDown)
         return button
     }()
-    
     private lazy var photoImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "person.circle.fill")
@@ -78,18 +76,15 @@ final class AddPersonViewController: UIViewController {
         imageView.tintColor = .gray
         return imageView
     }()
-    
     private lazy var changePhotoButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 135, y: 150, width: 130, height: 20)
-       // button.center.x = view.center.x
         button.setTitle("Изменить фото", for: .normal)
         button.titleLabel?.textAlignment = .center
         button.setTitleColor(UIColor.systemBlue, for: .normal)
         button.addTarget(self, action: #selector(changeFotoAction), for: .touchDown)
         return button
     }()
-    
     private lazy var nameLabel: UILabel = {
         var label = UILabel()
         label.text = "Имя"
@@ -98,7 +93,6 @@ final class AddPersonViewController: UIViewController {
         label.frame = CGRect(x: 20, y: 200, width: 100, height: 15)
         return label
     }()
-    
     private lazy var nameTextField: UITextField = {
         var textField = UITextField()
         textField.frame = CGRect(x: 20, y: 220, width: 320, height: 30)
@@ -106,7 +100,6 @@ final class AddPersonViewController: UIViewController {
         textField.setBottomBorder(color: .systemGray5)
         return textField
     }()
-    
     private lazy var dataLabel: UILabel = {
         var label = UILabel()
         label.text = "Дата"
@@ -115,7 +108,6 @@ final class AddPersonViewController: UIViewController {
         label.frame = CGRect(x: 20, y: 280, width: 100, height: 15)
         return label
     }()
-    
     private lazy var dataTextField: UITextField = {
         var textField = UITextField()
         textField.frame = CGRect(x: 20, y: 300, width: 320, height: 30)
@@ -124,7 +116,6 @@ final class AddPersonViewController: UIViewController {
         textField.inputView = dataPicker
         return textField
     }()
-    
     private lazy var ageLabel: UILabel = {
         var label = UILabel()
         label.text = "Возраст"
@@ -133,7 +124,6 @@ final class AddPersonViewController: UIViewController {
         label.frame = CGRect(x: 20, y: 360, width: 100, height: 15)
         return label
     }()
-    
     private lazy var ageTextField: UITextField = {
         var textField = UITextField()
         textField.frame = CGRect(x: 20, y: 380, width: 320, height: 30)
@@ -142,7 +132,6 @@ final class AddPersonViewController: UIViewController {
         textField.inputView = agePicker
         return textField
     }()
-    
     private lazy var sexLabel: UILabel = {
         var label = UILabel()
         label.text = "Пол"
@@ -151,7 +140,6 @@ final class AddPersonViewController: UIViewController {
         label.frame = CGRect(x: 20, y: 440, width: 100, height: 15)
         return label
     }()
-    
     private lazy var sexTextField: UITextField = {
         var textField = UITextField()
         textField.frame = CGRect(x: 20, y: 460, width: 320, height: 30)
@@ -160,7 +148,6 @@ final class AddPersonViewController: UIViewController {
         textField.inputView = sexPicker
         return textField
     }()
-    
     private lazy var instagramLabel: UILabel = {
         var label = UILabel()
         label.text = "Инстаграм"
@@ -169,7 +156,6 @@ final class AddPersonViewController: UIViewController {
         label.frame = CGRect(x: 20, y: 520, width: 100, height: 15)
         return label
     }()
-    
     private lazy var instagramTextField: UITextField = {
         var textField = UITextField()
         textField.frame = CGRect(x: 20, y: 540, width: 320, height: 30)
@@ -190,7 +176,6 @@ final class AddPersonViewController: UIViewController {
         configureSexPickerView()
         configureSelfView()
     }
-    
     private func configureSelfView() {
         view.addSubview(self.cancelButton)
         view.addSubview(self.addButton)
@@ -213,7 +198,6 @@ final class AddPersonViewController: UIViewController {
         navigationController?.popViewController(animated: true)
         dismiss(animated: true)
     }
-    
     @objc private func saveInformation() {
         nameTextField.text = ""
         dataTextField.text = ""
@@ -223,11 +207,10 @@ final class AddPersonViewController: UIViewController {
         let alertController = UIAlertController(title: "Карточка заполнена",
                                                 message: "Информация успешно сохранена",
                                                 preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default)
-        alertController.addAction(ok)
-        self.present(alertController, animated: true)
+        let alertControllerOkAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(alertControllerOkAction)
+        present(alertController, animated: true)
     }
-    
     @objc private func changeFotoAction() {
     }
     
@@ -237,7 +220,6 @@ final class AddPersonViewController: UIViewController {
         dataTextField.text = formatter.string(from: dataPicker.date)
         self.view.endEditing(true)
     }
-    
     @objc private func instagramAlertAction() {
         let alertController = UIAlertController(title: "Введите логин", message: "", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default) { _ in
@@ -250,7 +232,7 @@ final class AddPersonViewController: UIViewController {
         alertController.textFields?.first?.placeholder = "Например yadurachek2022"
         alertController.addAction(ok)
         alertController.addAction(cancel)
-        self.present(alertController, animated: true)
+        present(alertController, animated: true)
     }
     
     private func createDatePicker() {
@@ -265,7 +247,6 @@ final class AddPersonViewController: UIViewController {
         dataPicker.locale = .init(identifier: "English")
         dataPicker.preferredDatePickerStyle = .wheels
     }
-    
     private func configureAgePickerView() {
         agePicker.tag = 0
         agePicker.delegate = self

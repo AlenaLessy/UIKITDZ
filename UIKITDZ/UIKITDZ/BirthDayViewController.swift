@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+/// Экран дней рождений
 final class BirthDayViewController: UIViewController {
 
     // people Jeremy
@@ -178,6 +178,6 @@ final class BirthDayViewController: UIViewController {
     @objc private func addPersonAction() {
         let details = AddPersonViewController()
         details.modalTransitionStyle = .flipHorizontal
-        self.present(details, animated: true)
+        present(details, animated: true)
     }
 }
