@@ -18,6 +18,7 @@ class EntryViewController: UIViewController {
         image.frame = CGRect(x: 0, y: 0, width: view.frame.maxX, height: view.frame.maxY)
         return image
     }()
+    
     private lazy var backGroundLoginImage: UIImageView = {
         let image = UIImageView()
         image.backgroundColor = .lightGray
@@ -25,6 +26,7 @@ class EntryViewController: UIViewController {
         image.layer.cornerRadius = 15
         return image
     }()
+    
     private lazy var loginButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("Войти", for: .normal)
@@ -35,6 +37,7 @@ class EntryViewController: UIViewController {
         btn.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
         return btn
     }()
+    
     private lazy var registrationButton: UIButton = {
         let btn = UIButton()
         btn.frame = CGRect(x: 140, y: 430, width: 120, height: 20)
@@ -43,7 +46,8 @@ class EntryViewController: UIViewController {
         btn.addTarget(self, action: #selector(registrationButtonAction), for: .touchUpInside)
         return btn
     }()
-    private lazy var candyBarLable: UILabel = {
+    
+    private lazy var candyBarLabel: UILabel = {
         let label = UILabel()
         label.text = "Candy Bar"
         label.textColor = .red
@@ -51,6 +55,7 @@ class EntryViewController: UIViewController {
         label.font = UIFont(name: "System Italic", size: 20)
         return label
     }()
+    
     private lazy var loginTextField: UITextField = {
         let login = UITextField()
         login.frame = CGRect(x: 100, y: 270, width: 200, height: 40)
@@ -74,7 +79,6 @@ class EntryViewController: UIViewController {
         super.viewDidLoad()
         configureSubview()
         view.backgroundColor = .systemBackground
-        print(CommonUserDefaults.buyers)
     }
     
     // MARK: - Action
@@ -114,7 +118,7 @@ class EntryViewController: UIViewController {
         view.addSubview(loginButton)
         view.addSubview(loginTextField)
         view.addSubview(passwordTextField)
-        view.addSubview(candyBarLable)
+        view.addSubview(candyBarLabel)
         view.addSubview(registrationButton)
     }
     
@@ -124,8 +128,9 @@ class EntryViewController: UIViewController {
         let loginFailedAlert = UIAlertController(title: title,
                                                  message: message,
                                                  preferredStyle: .alert)
-        let loginFailedAlertAction = UIAlertAction(title: "OK", style: .cancel)
+        let loginFailedAlertAction = UIAlertAction(title: "OK",
+                                                   style: .cancel)
         loginFailedAlert.addAction(loginFailedAlertAction)
-        self.present(loginFailedAlert, animated: true)
+        present(loginFailedAlert, animated: true)
     }
 }

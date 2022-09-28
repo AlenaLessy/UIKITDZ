@@ -24,6 +24,7 @@ final class RegistrationViewController: UIViewController {
         label.font = UIFont(name: "Arial Bold", size: 20)
         return label
     }()
+    
     private lazy var loginLabel: UILabel = {
         let label = UILabel()
         label.text = "Логин"
@@ -32,6 +33,7 @@ final class RegistrationViewController: UIViewController {
         label.font = UIFont(name: "Arial Bold", size: 17)
         return label
     }()
+    
     private lazy var passwordLabel: UILabel = {
         let label = UILabel()
         label.text = "Пароль"
@@ -43,6 +45,7 @@ final class RegistrationViewController: UIViewController {
         label.font = UIFont(name: "Arial Bold", size: 17)
         return label
     }()
+    
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Имя"
@@ -54,6 +57,7 @@ final class RegistrationViewController: UIViewController {
         label.font = UIFont(name: "Arial Bold", size: 17)
         return label
     }()
+    
     private lazy var birthdayLabel: UILabel = {
         let label = UILabel()
         label.text = "Дата рождения"
@@ -65,6 +69,7 @@ final class RegistrationViewController: UIViewController {
         label.font = UIFont(name: "Arial Bold", size: 17)
         return label
     }()
+    
     private lazy var phoneNumberLabel: UILabel = {
         let label = UILabel()
         label.text = "Номер телефона"
@@ -76,6 +81,7 @@ final class RegistrationViewController: UIViewController {
         label.font = UIFont(name: "Arial Bold", size: 17)
         return label
     }()
+    
     private lazy var loginTextField: UITextField = {
         let text = UITextField()
         text.frame = CGRect(x: loginLabel.frame.minX,
@@ -86,6 +92,7 @@ final class RegistrationViewController: UIViewController {
         text.placeholder = "Введите ваш логин"
         return text
     }()
+    
     private lazy var passwordTextField: UITextField = {
         let text = UITextField()
         text.frame = CGRect(x: passwordLabel.frame.minX,
@@ -96,6 +103,7 @@ final class RegistrationViewController: UIViewController {
         text.placeholder = "Введите ваш пароль"
         return text
     }()
+    
     private lazy var nameTextField: UITextField = {
         let text = UITextField()
         text.frame = CGRect(x: nameLabel.frame.minX,
@@ -106,6 +114,7 @@ final class RegistrationViewController: UIViewController {
         text.placeholder = "Введите ваше имя"
         return text
     }()
+    
     private lazy var birthdayTextField: UITextField = {
         let text = UITextField()
         text.frame = CGRect(x: birthdayLabel.frame.minX,
@@ -117,6 +126,7 @@ final class RegistrationViewController: UIViewController {
         text.inputView = datePicker
         return text
     }()
+    
     private lazy var phoneNumberTextField: UITextField = {
         let text = UITextField()
         text.frame = CGRect(x: phoneNumberLabel.frame.minX,
@@ -127,6 +137,7 @@ final class RegistrationViewController: UIViewController {
         text.placeholder = "Например 89673241414"
         return text
     }()
+    
     private func createDatePicker() {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -152,6 +163,7 @@ final class RegistrationViewController: UIViewController {
         btn.addTarget(self, action: #selector(registrationButtonAction), for: .touchUpInside)
         return btn
     }()
+    
     private lazy var cancelButton: UIButton = {
         let button = UIButton()
         button.setTitle("Отмена", for: .normal)
@@ -174,12 +186,14 @@ final class RegistrationViewController: UIViewController {
         navigationController?.popViewController(animated: true)
         dismiss(animated: true)
     }
+    
     @objc private func datePickerButtonAction() {
         let formatter = DateFormatter()
         formatter.dateStyle = .full
         birthdayTextField.text = formatter.string(from: datePicker.date)
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
+    
     @objc private func registrationButtonAction() {
         guard let login = loginTextField.text,
               let password = passwordTextField.text,

@@ -15,7 +15,7 @@ final class PaymentViewController: UIViewController {
     
     // MARK: - Private properties
     
-    private var priceArray = [65, 45, 49, 75, 38]
+    private var prices = [65, 45, 49, 75, 38]
     
     private lazy var backGroundImage: UIImageView = {
         let image = UIImageView()
@@ -23,6 +23,7 @@ final class PaymentViewController: UIViewController {
         image.frame = CGRect(x: 0, y: 0, width: view.frame.maxX, height: view.frame.maxY)
         return image
     }()
+    
     private lazy var numberCandiesSlider: UISlider = {
         var slider = UISlider()
         slider.backgroundColor = .red
@@ -33,13 +34,15 @@ final class PaymentViewController: UIViewController {
         slider.addTarget(self, action: #selector(numberCandiesSliderAction), for: .valueChanged)
         return slider
     }()
-    private lazy var deliverySwith: UISwitch = {
+    
+    private lazy var deliverySwitch: UISwitch = {
         var switcher = UISwitch()
         switcher.isOn = false
         switcher.frame = CGRect(x: 300, y: 500, width: 30, height: 30)
         switcher.backgroundColor = .red
         return switcher
     }()
+    
     private lazy var paymentButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("Оплатить", for: .normal)
@@ -50,6 +53,7 @@ final class PaymentViewController: UIViewController {
         btn.addTarget(self, action: #selector(paymentButtonAction), for: .touchUpInside)
         return btn
     }()
+    
     private lazy var chooseAmountSweetsLabel: UILabel = {
         var label = UILabel()
         label.text = "Выберите необходимое количество конфет"
@@ -60,6 +64,7 @@ final class PaymentViewController: UIViewController {
         label.center.x = view.center.x
         return label
     }()
+    
     private lazy var totalPurchaseAmountLabel: UILabel = {
         let label = UILabel()
         label.text = "Общая сумма покупки составила:"
@@ -68,6 +73,7 @@ final class PaymentViewController: UIViewController {
         label.font = UIFont(name: "Arial Bold", size: 14)
         return label
     }()
+    
     private lazy var numberCandiesLabel: UILabel = {
         let label = UILabel()
         label.text = "Количество конфет:"
@@ -76,6 +82,7 @@ final class PaymentViewController: UIViewController {
         label.font = UIFont(name: "Arial Bold", size: 14)
         return label
     }()
+    
     private lazy var sumLabel: UILabel = {
         let label = UILabel()
         label.text = "0"
@@ -84,6 +91,7 @@ final class PaymentViewController: UIViewController {
         label.font = UIFont(name: "Arial Bold", size: 14)
         return label
     }()
+    
     private lazy var numberOfCandiesLabel: UILabel = {
         let label = UILabel()
         label.text = "0"
@@ -92,6 +100,7 @@ final class PaymentViewController: UIViewController {
         label.font = UIFont(name: "Arial Bold", size: 14)
         return label
     }()
+    
     private lazy var deliveryLabel: UILabel = {
         var label = UILabel()
         label.text = "Доставка до двери"
@@ -102,6 +111,7 @@ final class PaymentViewController: UIViewController {
         label.center.x = view.center.x
         return label
     }()
+    
     private lazy var nameTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Введите имя получателя"
@@ -109,6 +119,7 @@ final class PaymentViewController: UIViewController {
         textField.borderStyle = .roundedRect
         return textField
     }()
+    
     private lazy var addressTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Введите адрес получателя"
@@ -133,13 +144,14 @@ final class PaymentViewController: UIViewController {
                                              preferredStyle: .alert)
         let paymentAlertAction = UIAlertAction(title: "OK", style: .cancel)
         paymentAlert.addAction(paymentAlertAction)
-        self.present(paymentAlert, animated: true)
+        present(paymentAlert, animated: true)
         nameTextField.text = ""
         addressTextField.text = ""
         numberCandiesSlider.value = 0
     }
+    
     @objc private func numberCandiesSliderAction() {
-        let price = Int(priceArray[currentIndex] * Int(numberCandiesSlider.value))
+        let price = Int(prices[currentIndex] * Int(numberCandiesSlider.value))
         sumLabel.text = String(price)
         let nubmerOfCandies = Int(numberCandiesSlider.value)
         numberOfCandiesLabel.text = String(nubmerOfCandies)
@@ -149,7 +161,7 @@ final class PaymentViewController: UIViewController {
     
     private func configureSubview() {
         view.addSubview(backGroundImage)
-        view.addSubview(deliverySwith)
+        view.addSubview(deliverySwitch)
         view.addSubview(deliveryLabel)
         view.addSubview(chooseAmountSweetsLabel)
         view.addSubview(numberCandiesSlider)

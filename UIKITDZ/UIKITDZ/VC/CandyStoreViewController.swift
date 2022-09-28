@@ -15,18 +15,18 @@ final class CandyStoreViewController: UIViewController {
     
     // MARK: - Private properties
     
-    private var candyImageArray = [UIImage(named: "candyOne.jpeg"),
+    private var candyImages = [UIImage(named: "candyOne.jpeg"),
                                    UIImage(named: "candyTwo.jpeg"),
                                    UIImage(named: "candyThree.jpeg"),
                                    UIImage(named: "candyFour.jpeg"),
                                    UIImage(named: "candyFive.jpeg")]
-    private var candyNameArray = ["Трюфель", "Шоко", "Малина", "Лимон", "Халва"]
-    private var descriptionCandyArray = ["Премиальный шоколад и терпкий трюфель",
+    private var candyNames = ["Трюфель", "Шоко", "Малина", "Лимон", "Халва"]
+    private var descriptionCandies = ["Премиальный шоколад и терпкий трюфель",
                                          "Горький шоколад с вишней",
                                          "Малиновое пралине с кокосовой начинкой",
                                          "Лимонный мусс и белый шоколад",
                                          "Миндальная халва в молочном шоколаде"]
-    private var priceCandyForLableArray = ["65 рублей",
+    private var priceCandyForLabel = ["65 рублей",
                                    "45 рублей",
                                    "49 рублей",
                                    "75 рублей",
@@ -40,6 +40,7 @@ final class CandyStoreViewController: UIViewController {
         image.frame = CGRect(x: 0, y: 0, width: view.frame.maxX, height: view.frame.maxY)
         return image
     }()
+    
     private lazy var welcomeLabel: UILabel = {
         let label = UILabel()
         label.text = "Здравствуйте \(welcomeName)!"
@@ -56,6 +57,7 @@ final class CandyStoreViewController: UIViewController {
         label.font = UIFont(name: "Arial Bold", size: 17)
         return label
     }()
+    
     private lazy var descriptionCandyLabel: UILabel = {
         let label = UILabel()
         label.text = "С любовью к шоколаду"
@@ -64,6 +66,7 @@ final class CandyStoreViewController: UIViewController {
         label.font = UIFont(name: "Arial Bold", size: 16)
         return label
     }()
+    
     private lazy var priceCandyLabel: UILabel = {
         let label = UILabel()
         label.text = ""
@@ -80,7 +83,7 @@ final class CandyStoreViewController: UIViewController {
     }()
     private lazy var candySegmentControl: UISegmentedControl = {
         var sc = UISegmentedControl()
-        sc = UISegmentedControl(items: candyNameArray)
+        sc = UISegmentedControl(items: candyNames)
         sc.frame = CGRect(x: 10, y: candyImage.frame.maxY, width: 370, height: 40)
         sc.backgroundColor = #colorLiteral(red: 0.8695957065, green: 0.4091776013, blue: 0.6098342538, alpha: 1)
         sc.addTarget(self, action: #selector(candySegmentControlAction), for: .valueChanged)
@@ -116,9 +119,9 @@ final class CandyStoreViewController: UIViewController {
     @objc private func candySegmentControlAction(target: UISegmentedControl) {
         guard target == candySegmentControl else { return }
         let segmentIndex = target.selectedSegmentIndex
-        candyImage.image = candyImageArray[segmentIndex]
-        descriptionCandyLabel.text = descriptionCandyArray[segmentIndex]
-        priceCandyLabel.text = priceCandyForLableArray[segmentIndex]
+        candyImage.image = candyImages[segmentIndex]
+        descriptionCandyLabel.text = descriptionCandies[segmentIndex]
+        priceCandyLabel.text = priceCandyForLabel[segmentIndex]
         currentIndexCandy = segmentIndex
     }
     
