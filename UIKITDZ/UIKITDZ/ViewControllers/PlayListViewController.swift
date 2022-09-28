@@ -9,7 +9,7 @@ import UIKit
 
 import AVFoundation
 
-/// Основной экран плеера
+/// Плей-лист
 final class PlayListViewController: UIViewController {
 
     @IBOutlet weak private var nameSongOneLabel: UILabel!
@@ -45,6 +45,7 @@ final class PlayListViewController: UIViewController {
     }
     
     func setupUI() {
+        guard songs.count <= 2 else { return }
         nameSongOneLabel.text = songs[0].name
         nameSongTwoLabel.text = songs[1].name
         durationSongOneLabel.text = songs[0].duration
