@@ -7,23 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5706344928E3748C00EFF246 /* CommonUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5706344828E3748C00EFF246 /* CommonUserDefaults.swift */; };
+		5706344D28E39EF800EFF246 /* candyBarFon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5706344C28E39EF800EFF246 /* candyBarFon.jpeg */; };
+		575D897228E30A220046E208 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575D897128E30A220046E208 /* RegistrationViewController.swift */; };
+		57699B6228E1EF1A00732F53 /* BuyerInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57699B6128E1EF1A00732F53 /* BuyerInformation.swift */; };
+		57699B6A28E20B0A00732F53 /* candyBarphoto.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 57699B6928E20B0A00732F53 /* candyBarphoto.jpeg */; };
+		57699B6C28E2183D00732F53 /* CandyStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57699B6B28E2183D00732F53 /* CandyStoreViewController.swift */; };
 		57B5497D28DB544700EC20FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5497C28DB544700EC20FE /* AppDelegate.swift */; };
 		57B5497F28DB544700EC20FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5497E28DB544700EC20FE /* SceneDelegate.swift */; };
-		57B5498128DB544700EC20FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5498028DB544700EC20FE /* ViewController.swift */; };
+		57B5498128DB544700EC20FE /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5498028DB544700EC20FE /* EntryViewController.swift */; };
 		57B5498428DB544700EC20FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B5498228DB544700EC20FE /* Main.storyboard */; };
 		57B5498628DB544700EC20FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B5498528DB544700EC20FE /* Assets.xcassets */; };
 		57B5498928DB544700EC20FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B5498728DB544700EC20FE /* LaunchScreen.storyboard */; };
+		57F2E14F28E3DC8400B8695A /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F2E14E28E3DC8400B8695A /* PaymentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5706344828E3748C00EFF246 /* CommonUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUserDefaults.swift; sourceTree = "<group>"; };
+		5706344C28E39EF800EFF246 /* candyBarFon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = candyBarFon.jpeg; sourceTree = "<group>"; };
+		575D897128E30A220046E208 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		57699B6128E1EF1A00732F53 /* BuyerInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerInformation.swift; sourceTree = "<group>"; };
+		57699B6928E20B0A00732F53 /* candyBarphoto.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = candyBarphoto.jpeg; sourceTree = "<group>"; };
+		57699B6B28E2183D00732F53 /* CandyStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyStoreViewController.swift; sourceTree = "<group>"; };
 		57B5497928DB544700EC20FE /* UIKITDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKITDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B5497C28DB544700EC20FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57B5497E28DB544700EC20FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		57B5498028DB544700EC20FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		57B5498028DB544700EC20FE /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		57B5498328DB544700EC20FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57B5498528DB544700EC20FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57B5498828DB544700EC20FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57B5498A28DB544700EC20FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57F2E14E28E3DC8400B8695A /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +51,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5706344A28E39B8000EFF246 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				575D897128E30A220046E208 /* RegistrationViewController.swift */,
+				57699B6B28E2183D00732F53 /* CandyStoreViewController.swift */,
+				57F2E14E28E3DC8400B8695A /* PaymentViewController.swift */,
+				57B5498028DB544700EC20FE /* EntryViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		5706344B28E39B8E00EFF246 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				57699B6128E1EF1A00732F53 /* BuyerInformation.swift */,
+				5706344828E3748C00EFF246 /* CommonUserDefaults.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		57B5497028DB544700EC20FE = {
 			isa = PBXGroup;
 			children = (
@@ -58,11 +92,14 @@
 			children = (
 				57B5497C28DB544700EC20FE /* AppDelegate.swift */,
 				57B5497E28DB544700EC20FE /* SceneDelegate.swift */,
-				57B5498028DB544700EC20FE /* ViewController.swift */,
+				5706344A28E39B8000EFF246 /* VC */,
+				5706344B28E39B8E00EFF246 /* Models */,
 				57B5498228DB544700EC20FE /* Main.storyboard */,
 				57B5498528DB544700EC20FE /* Assets.xcassets */,
 				57B5498728DB544700EC20FE /* LaunchScreen.storyboard */,
 				57B5498A28DB544700EC20FE /* Info.plist */,
+				57699B6928E20B0A00732F53 /* candyBarphoto.jpeg */,
+				5706344C28E39EF800EFF246 /* candyBarFon.jpeg */,
 			);
 			path = UIKITDZ;
 			sourceTree = "<group>";
@@ -127,8 +164,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				57B5498928DB544700EC20FE /* LaunchScreen.storyboard in Resources */,
+				57699B6A28E20B0A00732F53 /* candyBarphoto.jpeg in Resources */,
 				57B5498628DB544700EC20FE /* Assets.xcassets in Resources */,
 				57B5498428DB544700EC20FE /* Main.storyboard in Resources */,
+				5706344D28E39EF800EFF246 /* candyBarFon.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +199,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57B5498128DB544700EC20FE /* ViewController.swift in Sources */,
+				575D897228E30A220046E208 /* RegistrationViewController.swift in Sources */,
+				57B5498128DB544700EC20FE /* EntryViewController.swift in Sources */,
+				57699B6C28E2183D00732F53 /* CandyStoreViewController.swift in Sources */,
+				57F2E14F28E3DC8400B8695A /* PaymentViewController.swift in Sources */,
+				57699B6228E1EF1A00732F53 /* BuyerInformation.swift in Sources */,
+				5706344928E3748C00EFF246 /* CommonUserDefaults.swift in Sources */,
 				57B5497D28DB544700EC20FE /* AppDelegate.swift in Sources */,
 				57B5497F28DB544700EC20FE /* SceneDelegate.swift in Sources */,
 			);
