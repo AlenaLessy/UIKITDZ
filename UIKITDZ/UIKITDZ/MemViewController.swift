@@ -19,7 +19,7 @@ final class MemViewController: UIViewController {
     // MARK: - Private properties
     
     private var activityViewController: UIActivityViewController?
-    private var imageArray = [UIImage(named: "mem1"),
+    private var images = [UIImage(named: "mem1"),
                               UIImage(named: "mem2"),
                               UIImage(named: "mem3"),
                               UIImage(named: "mem4")]
@@ -38,24 +38,27 @@ final class MemViewController: UIViewController {
     @IBAction func shareAction(_ sender: Any) {
         shareButton()
     }
+    
     @IBAction func memSegmentControlAction(_ sender: UISegmentedControl) {
         guard sender == memSegmentControl else { return }
         memSegmentControl.addTarget(self, action: #selector(memSegmenrControlImageAction), for: .valueChanged)
     }
+    
     @IBAction func shareButtonImageAction(_ sender: UIButton) {
-    let selectedIndex = memSegmentControl.selectedSegmentIndex
-            guard let image = imageArray[selectedIndex] else { return }
-            let activity = UIActivityViewController(
-                activityItems: [image],
-                applicationActivities: .none
-            )
-            present(activity, animated: true, completion: .none)
-        }
+        let selectedIndex = memSegmentControl.selectedSegmentIndex
+        guard let image = images[selectedIndex] else { return }
+        let activity = UIActivityViewController(
+            activityItems: [image],
+            applicationActivities: .none
+        )
+        present(activity, animated: true, completion: .none)
+    }
     
     @objc private func memSegmenrControlImageAction() {
         let segmentIndex = memSegmentControl.selectedSegmentIndex
-        memImage.image = imageArray[segmentIndex]
+        memImage.image = images[segmentIndex]
     }
+    
     @objc private func shareButton() {
         guard let item = memImage.image else { return }
         let activityViewController = UIActivityViewController(activityItems: [item], applicationActivities: nil)
@@ -79,16 +82,15 @@ final class MemViewController: UIViewController {
         myPicker.delegate = self
         myPicker.dataSource = self
     }
-        }
+}
 
 // MARK: - extension picker
-
+///  UIPickerViewDelegate, UIPickerViewDataSource
+///
 extension MemViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int { 1 }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 3
-    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int { 3 }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return someText[row]
