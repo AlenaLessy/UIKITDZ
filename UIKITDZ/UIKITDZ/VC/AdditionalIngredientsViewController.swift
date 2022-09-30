@@ -7,13 +7,13 @@
 
 import UIKit
 
-/// protocol popRootVC
+/// protocol popRootVC для перехода экранов
 
 protocol PopToRootVC: AnyObject {
     func goToBack()
 }
 /// Экран выбора доп ингридиентов
-class AdditionalIngredientsViewController: UIViewController {
+final class AdditionalIngredientsViewController: UIViewController {
     
     enum Ingridients {
         case cheese(Bool)
@@ -24,12 +24,10 @@ class AdditionalIngredientsViewController: UIViewController {
     }
     
     // MARK: - Public Properties
-    
     var currentIndex = 0
     var pizzaInfo: [PizzaInfo]? = []
     
     // MARK: - Private Properties
-    
     private var size = ["25 см", "30 см", "35 см"]
     private var order: [String] = []
     
@@ -106,7 +104,6 @@ class AdditionalIngredientsViewController: UIViewController {
     }
     
     // MARK: - Make UI
-    
     private func makeSwitch(yValue: Int) -> UISwitch {
         let switcher = UISwitch()
         switcher.isOn = false
@@ -128,7 +125,6 @@ class AdditionalIngredientsViewController: UIViewController {
     }
     
     // MARK: - Action
-    
     @objc private func infoButtonAction() {
         let infopizzaVC = InfoPizzaViewController()
         infopizzaVC.modalPresentationStyle = .pageSheet
@@ -180,7 +176,6 @@ class AdditionalIngredientsViewController: UIViewController {
     }
     
     // MARK: Setup UI
-    
     private func setupImageAndLabel() {
         guard let pizzaInfo = pizzaInfo,
               pizzaInfo.count <= 5
@@ -210,7 +205,6 @@ class AdditionalIngredientsViewController: UIViewController {
 }
 
 /// подписание под протокол для перехода назад
-
 extension AdditionalIngredientsViewController: PopToRootVC {
     func goToBack() {
         guard let viewController = self.presentingViewController as? UINavigationController else { return }

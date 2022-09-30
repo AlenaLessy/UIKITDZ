@@ -7,14 +7,12 @@
 
 import UIKit
 /// экран информации о пицце
-class InfoPizzaViewController: UIViewController {
+final class InfoPizzaViewController: UIViewController {
 
     // MARK: Public Properties
-    
     var pizzaInfo: String = ""
 
     // MARK: Private Properties
-   
     private lazy var infoLabel: UILabel = {
         let label = UILabel()
         label.text = pizzaInfo
@@ -38,20 +36,17 @@ class InfoPizzaViewController: UIViewController {
     }()
     
     // MARK: - LifeCycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureUI()
     }
     // MARK: - Action
-    
     @objc private func cancelButtonAction() {
         dismiss(animated: true)
     }
     
     // MARK: - Private Method
-    
     private func configureUI() {
         view.addSubview(cancelButton)
         view.addSubview(infoLabel)

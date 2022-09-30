@@ -7,10 +7,9 @@
 
 import UIKit
 /// Экран выбора пиццы
-class PizzaViewController: UIViewController {
+final class PizzaViewController: UIViewController {
     
     // MARK: - private properties
-    
     private var pizzaInfo: [PizzaInfo] = [.init(name: "Ветчина и сыр",
                                                 image: "bigHamAndMushrooms.jpeg",
                                                 compound: "Ветчина, моцарелла, фирменный соус Альфредо",
@@ -146,7 +145,6 @@ Cостав: Ветчина, моцарелла, фирменный соус а�
     }()
     
     // MARK: Life сycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         backVCButton()
@@ -156,7 +154,6 @@ Cостав: Ветчина, моцарелла, фирменный соус а�
     }
     
     // MARK: - Private Methods
-    
     private func makePizzaImage(yCoordinate: Int) -> UIImageView {
         let image = UIImageView()
         image.frame = CGRect(x: 10, y: yCoordinate, width: 135, height: 135)
@@ -185,7 +182,6 @@ Cостав: Ветчина, моцарелла, фирменный соус а�
     }
     
     // MARK: Action
-    
     private func addTargetButton() {
         pizzaHamCheeseButton.addTarget(self, action: #selector(pizzaHamCheeseButtonAction), for: .touchUpInside)
         pizzaPipperoniButton.addTarget(self, action: #selector(pizzaPipperoniButtonAction), for: .touchUpInside)
@@ -234,7 +230,6 @@ Cостав: Ветчина, моцарелла, фирменный соус а�
     }
     
     // MARK: - Setup
-    
     private func setupImageAndLabel() {
         guard pizzaInfo.count <= 5 else { return }
         pizzaHamCheeseImage.image = UIImage(named: pizzaInfo[0].image)
@@ -256,7 +251,6 @@ Cостав: Ветчина, моцарелла, фирменный соус а�
     }
     
     // MARK: configure
-    
     private func configureUI() {
         view.backgroundColor = .systemBackground
         title = "Pizza"

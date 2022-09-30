@@ -10,7 +10,6 @@ import UIKit
 final class ChoiceDishViewController: UIViewController {
     
     // MARK: - private properties
-    
     private lazy var pizzaImage: UIImageView = {
         let image = UIImageView()
         image.frame = CGRect(x: 20, y: 150, width: 100, height: 100)
@@ -46,14 +45,12 @@ final class ChoiceDishViewController: UIViewController {
          }()
     
     // MARK: - LifeCycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
     }
 
     // MARK: - Action
-    
     @objc private func pizzaButtonAction() {
         let pizzaVC = PizzaViewController()
         navigationController?.pushViewController(pizzaVC, animated: true)
@@ -62,7 +59,6 @@ final class ChoiceDishViewController: UIViewController {
     @objc private func rollButtonAction() { }
 
     // MARK: - Private Methods
-    
     private func configureUI() {
         view.backgroundColor = .systemBackground
         navigationItem.leftBarButtonItem = UIBarButtonItem()

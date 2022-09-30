@@ -23,7 +23,6 @@ extension UITextField {
 final class LoginScreenViewController: UIViewController {
     
     // MARK: - private properties
-    
     private lazy var iconImage: UIImageView = {
         let image = UIImageView()
         image.frame = CGRect(x: 100, y: 100, width: 200, height: 200)
@@ -79,7 +78,6 @@ final class LoginScreenViewController: UIViewController {
          }()
     
     // MARK: - Action
-    
     @objc private func loginButtonAction() {
              let choiceDishVC = ChoiceDishViewController()
         let navigationController = UINavigationController(rootViewController: choiceDishVC)
@@ -88,7 +86,6 @@ final class LoginScreenViewController: UIViewController {
          }
     
     // MARK: - LifeCycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -96,7 +93,6 @@ final class LoginScreenViewController: UIViewController {
     }
     
     // MARK: - setup UI
-    
     private func addSubview() {
         view.addSubview(phoneNumberTextField)
         view.addSubview(iconImage)

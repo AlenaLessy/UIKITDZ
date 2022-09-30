@@ -7,7 +7,7 @@
 
 import UIKit
 /// Экран оплаты
-class BillPaymentViewController: UIViewController {
+final class BillPaymentViewController: UIViewController {
 
     // MARK: - Public Properties
     var order: [String] = []
@@ -16,7 +16,6 @@ class BillPaymentViewController: UIViewController {
     weak var delegate: PopToRootVC?
     
     // MARK: - Private Properties
-    
     private lazy var cardPaymentLabel = makeLabel(yValue: 500, text: "Оплата картой")
     private lazy var cashPaymentLabel = makeLabel(yValue: 550, text: "Оплата наличными")
     
@@ -110,7 +109,6 @@ class BillPaymentViewController: UIViewController {
     }
     
     // MARK: - Action
-    
     @objc private func payButtonAction() {
         let alert = UIAlertController(title: "Заказ оплачен",
                                       message: "Ваш заказ доставят в течение 15 минут",
@@ -144,7 +142,6 @@ class BillPaymentViewController: UIViewController {
 }
 
 // MARK: - Private Methods
-
 private func makeLabel(yValue: Int, text: String) -> UILabel {
     let label = UILabel()
     label.text = text
