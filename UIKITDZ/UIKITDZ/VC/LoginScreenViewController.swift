@@ -23,7 +23,7 @@ extension UITextField {
 final class LoginScreenViewController: UIViewController {
     
     // MARK: - private properties
-    private lazy var iconImage: UIImageView = {
+    private lazy var iconImageView: UIImageView = {
         let image = UIImageView()
         image.frame = CGRect(x: 100, y: 100, width: 200, height: 200)
         image.image = UIImage(named: "pizza.jpeg")
@@ -95,7 +95,7 @@ final class LoginScreenViewController: UIViewController {
     // MARK: - setup UI
     private func addSubview() {
         view.addSubview(phoneNumberTextField)
-        view.addSubview(iconImage)
+        view.addSubview(iconImageView)
         view.addSubview(phoneNumberTextField)
         view.addSubview(phoneLabel)
         view.addSubview(passwordLabel)

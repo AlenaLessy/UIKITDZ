@@ -10,10 +10,10 @@ import UIKit
 final class BillPaymentViewController: UIViewController {
 
     // MARK: - Public Properties
-    var order: [String] = []
+    var orders: [String] = []
     var pizzaName = ""
     
-    weak var delegate: PopToRootVC?
+    weak var delegate: PopToRootDelegate?
     
     // MARK: - Private Properties
     private lazy var cardPaymentLabel = makeLabel(yValue: 500, text: "Оплата картой")
@@ -84,8 +84,8 @@ final class BillPaymentViewController: UIViewController {
     private lazy var addIngredientsNameLabel: UILabel = {
         let label = UILabel()
         var textOrder = ""
-        for index in 0 ..< order.count {
-            textOrder += String(index + 1) + " " + order[index] + "\n"
+        for index in 0 ..< orders.count {
+            textOrder += String(index + 1) + " " + orders[index] + "\n"
         }
         label.text = textOrder
         label.numberOfLines = 7

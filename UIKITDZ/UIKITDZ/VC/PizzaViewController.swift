@@ -11,10 +11,10 @@ final class PizzaViewController: UIViewController {
     
     // MARK: - private properties
     private var pizzaInfo: [PizzaInfo] = [.init(name: "Ветчина и сыр",
-                                                image: "bigHamAndMushrooms.jpeg",
+                                                imageName: "bigHamAndMushrooms.jpeg",
                                                 compound: "Ветчина, моцарелла, фирменный соус Альфредо",
                                                 calories: "276.3 ккал",
-                                                sizeImage: ["litleHamAndMushrooms.jpeg",
+                                                imageSizes: ["litleHamAndMushrooms.jpeg",
                                                             "midleHamAndMushrooms.jpeg",
                                                             "bigHamAndMushrooms.jpeg"],
                                                 info: """
@@ -32,10 +32,10 @@ Cостав: Ветчина, моцарелла, фирменный соус а�
 500 г
 """),
                                           .init(name: "Пепперони",
-                                                image: "bigPipperoni.jpeg",
+                                                imageName: "bigPipperoni.jpeg",
                                                 compound: "Пепперони, моцарелла, томаты, фирменный томатный соус",
                                                 calories: "242 ккал",
-                                                sizeImage: ["littlePipperoni.jpeg",
+                                                imageSizes: ["littlePipperoni.jpeg",
                                                             "midlePipperoni.jpeg",
                                                             "bigPipperoni.jpeg"],
                                                info: """
@@ -53,10 +53,10 @@ Cостав: Ветчина, моцарелла, фирменный соус а�
 620 г
 """),
                                           .init(name: "Домашняя",
-                                                image: "bigHomemade.jpeg",
+                                                imageName: "bigHomemade.jpeg",
                                                 compound: "Пепперони, ветчина, огурчики, томаты, моцарелла, соус",
                                                 calories: "184 ккал",
-                                                sizeImage: ["littleHomemade.jpeg",
+                                                imageSizes: ["littleHomemade.jpeg",
                                                             "midleHomemade.jpeg",
                                                             "bigHomemade.jpeg"],
                                                info: """
@@ -73,10 +73,10 @@ Cостав: Ветчина, моцарелла, фирменный соус а�
 630 г
 """),
                                           .init(name: "Цыпленок",
-                                                image: "bigCheeseСhicken.jpeg",
+                                                imageName: "bigCheeseСhicken.jpeg",
                                                 compound: "Цыпленок, моцарелла, сыр чеддер, пармезан, томаты, чеснок",
                                                 calories: "235 ккал",
-                                                sizeImage: ["littleCheeseСhicken.jpeg",
+                                                imageSizes: ["littleCheeseСhicken.jpeg",
                                                             "midleCheeseСhicken.jpeg",
                                                             "bigCheeseСhicken.jpeg"],
                                                info: """
@@ -94,10 +94,10 @@ Cостав: Ветчина, моцарелла, фирменный соус а�
 620 г
 """),
                                           .init(name: "Гавайская",
-                                                image: "bigHawaiian.jpeg",
+                                                imageName: "bigHawaiian.jpeg",
                                                 compound: "Ветчина, ананасы, моцарелла, фирменный томатный соус",
                                                 calories: "206 ккал",
-                                                sizeImage: ["littleHawaiian.jpeg",
+                                                imageSizes: ["littleHawaiian.jpeg",
                                                             "midleHawaiian.jpeg",
                                                             "bigHawaiian.jpeg"],
                                                info: """
@@ -115,11 +115,11 @@ Cостав: Ветчина, моцарелла, фирменный соус а�
 650 г
 """)]
    
-    private lazy var pizzaHamCheeseImage = makePizzaImage(yCoordinate: 150)
-    private lazy var pizzaPipperoniImage = makePizzaImage(yCoordinate: 270)
-    private lazy var pizzaHomemadeImage = makePizzaImage(yCoordinate: 390)
-    private lazy var pizzaChickenCheeseImage = makePizzaImage(yCoordinate: 510)
-    private lazy var pizzaHawaiianImage = makePizzaImage(yCoordinate: 630)
+    private lazy var pizzaHamCheeseImage = makePizzaImageView(yCoordinate: 150)
+    private lazy var pizzaPipperoniImage = makePizzaImageView(yCoordinate: 270)
+    private lazy var pizzaHomemadeImage = makePizzaImageView(yCoordinate: 390)
+    private lazy var pizzaChickenCheeseImage = makePizzaImageView(yCoordinate: 510)
+    private lazy var pizzaHawaiianImage = makePizzaImageView(yCoordinate: 630)
     
     private lazy var pizzaHamCheeseLabel = makeNamePizzaLabel(yCoordinate: 200)
     private lazy var pizzaPipperoniLabel = makeNamePizzaLabel(yCoordinate: 320)
@@ -154,7 +154,7 @@ Cостав: Ветчина, моцарелла, фирменный соус а�
     }
     
     // MARK: - Private Methods
-    private func makePizzaImage(yCoordinate: Int) -> UIImageView {
+    private func makePizzaImageView(yCoordinate: Int) -> UIImageView {
         let image = UIImageView()
         image.frame = CGRect(x: 10, y: yCoordinate, width: 135, height: 135)
         return image
@@ -232,11 +232,11 @@ Cостав: Ветчина, моцарелла, фирменный соус а�
     // MARK: - Setup
     private func setupImageAndLabel() {
         guard pizzaInfo.count <= 5 else { return }
-        pizzaHamCheeseImage.image = UIImage(named: pizzaInfo[0].image)
-        pizzaPipperoniImage.image = UIImage(named: pizzaInfo[1].image)
-        pizzaHomemadeImage.image = UIImage(named: pizzaInfo[2].image)
-        pizzaChickenCheeseImage.image = UIImage(named: pizzaInfo[3].image)
-        pizzaHawaiianImage.image = UIImage(named: pizzaInfo[4].image)
+        pizzaHamCheeseImage.image = UIImage(named: pizzaInfo[0].imageName)
+        pizzaPipperoniImage.image = UIImage(named: pizzaInfo[1].imageName)
+        pizzaHomemadeImage.image = UIImage(named: pizzaInfo[2].imageName)
+        pizzaChickenCheeseImage.image = UIImage(named: pizzaInfo[3].imageName)
+        pizzaHawaiianImage.image = UIImage(named: pizzaInfo[4].imageName)
         
         pizzaHamCheeseLabel.text = pizzaInfo[0].name
         pizzaPipperoniLabel.text = pizzaInfo[1].name

@@ -9,7 +9,7 @@ import UIKit
 
 /// protocol popRootVC для перехода экранов
 
-protocol PopToRootVC: AnyObject {
+protocol PopToRootDelegate: AnyObject {
     func goToBack()
 }
 /// Экран выбора доп ингридиентов
@@ -29,7 +29,7 @@ final class AdditionalIngredientsViewController: UIViewController {
     
     // MARK: - Private Properties
     private var size = ["25 см", "30 см", "35 см"]
-    private var order: [String] = []
+    private var orders: [String] = []
     
     private lazy var addCheeseSwitch = makeSwitch(yValue: 400)
     private lazy var addmushroomsSwitch = makeSwitch(yValue: 450)
@@ -65,7 +65,7 @@ final class AdditionalIngredientsViewController: UIViewController {
         return label
     }()
     
-    private lazy var pizzaImage: UIImageView = {
+    private lazy var pizzaImageView: UIImageView = {
         let image = UIImageView()
         image.frame = CGRect(x: 75,
                              y: 100,
@@ -136,10 +136,10 @@ final class AdditionalIngredientsViewController: UIViewController {
     @objc private func sizePizzSegmentControlAction(target: UISegmentedControl) {
         guard target == sizePizzSegmentControl else { return }
         let segmentIndex = target.selectedSegmentIndex
-        guard let images = pizzaInfo?[currentIndex].sizeImage else { return }
+        guard let images = pizzaInfo?[currentIndex].imageSizes else { return }
         switch segmentIndex {
         case 0...2:
-            pizzaImage.image = UIImage(named: images[segmentIndex])
+            pizzaImageView.image = UIImage(named: images[segmentIndex])
         default:
             break
         }
@@ -147,19 +147,19 @@ final class AdditionalIngredientsViewController: UIViewController {
     
     private func checkOrder() {
         if addHumSwitch.isOn {
-            order.append("Ветчина")
+            orders.append("Ветчина")
         }
         if addOlivesSwitch.isOn {
-            order.append("Маслины")
+            orders.append("Маслины")
         }
         if addChickenSwitch.isOn {
-            order.append("Курица")
+            orders.append("Курица")
         }
         if addmushroomsSwitch.isOn {
-            order.append("Грибы")
+            orders.append("Грибы")
         }
         if addCheeseSwitch.isOn {
-            order.append("Сыр")
+            orders.append("Сыр")
         }
     }
     
@@ -167,7 +167,7 @@ final class AdditionalIngredientsViewController: UIViewController {
         checkOrder()
         let billPaymentVC = BillPaymentViewController()
         billPaymentVC.delegate = self
-        billPaymentVC.order = order
+        billPaymentVC.orders = orders
         guard let pizzaInfo = pizzaInfo else { return }
         billPaymentVC.pizzaName = pizzaInfo[currentIndex].name
         let navigationControllerTwo = UINavigationController(rootViewController: billPaymentVC)
@@ -180,14 +180,14 @@ final class AdditionalIngredientsViewController: UIViewController {
         guard let pizzaInfo = pizzaInfo,
               pizzaInfo.count <= 5
         else { return }
-        pizzaImage.image = UIImage(named: pizzaInfo[currentIndex].image)
+        pizzaImageView.image = UIImage(named: pizzaInfo[currentIndex].imageName)
         pizzaNameLabel.text = pizzaInfo[currentIndex].name
     }
     
     private func setupUI() {
         view.addSubview(plusButton)
         view.addSubview(pizzaNameLabel)
-        view.addSubview(pizzaImage)
+        view.addSubview(pizzaImageView)
         view.addSubview(addCheeseSwitch)
         view.addSubview(sizePizzSegmentControl)
         view.addSubview(addmushroomsSwitch)
@@ -205,7 +205,7 @@ final class AdditionalIngredientsViewController: UIViewController {
 }
 
 /// подписание под протокол для перехода назад
-extension AdditionalIngredientsViewController: PopToRootVC {
+extension AdditionalIngredientsViewController: PopToRootDelegate {
     func goToBack() {
         guard let viewController = self.presentingViewController as? UINavigationController else { return }
         

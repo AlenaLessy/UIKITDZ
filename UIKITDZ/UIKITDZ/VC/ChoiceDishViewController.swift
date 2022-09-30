@@ -10,7 +10,7 @@ import UIKit
 final class ChoiceDishViewController: UIViewController {
     
     // MARK: - private properties
-    private lazy var pizzaImage: UIImageView = {
+    private lazy var pizzaImageView: UIImageView = {
         let image = UIImageView()
         image.frame = CGRect(x: 20, y: 150, width: 100, height: 100)
         image.image = UIImage(named: "pizz.jpeg")
@@ -27,9 +27,9 @@ final class ChoiceDishViewController: UIViewController {
              return btn
          }()
     
-    private lazy var rollImage: UIImageView = {
+    private lazy var rollImageView: UIImageView = {
         let image = UIImageView()
-        image.frame = CGRect(x: pizzaImage.frame.minX, y: pizzaImage.frame.maxY, width: 100, height: 100)
+        image.frame = CGRect(x: pizzaImageView.frame.minX, y: pizzaImageView.frame.maxY, width: 100, height: 100)
         image.image = UIImage(named: "roll.jpeg")
         return image
     }()
@@ -38,7 +38,7 @@ final class ChoiceDishViewController: UIViewController {
              let btn = UIButton()
              btn.setTitle("Роллы", for: .normal)
              btn.setTitleColor(.black, for: .normal)
-        btn.frame = CGRect(x: pizzaImage.frame.minX, y: pizzaImage.frame.maxY, width: 300, height: 100)
+        btn.frame = CGRect(x: pizzaImageView.frame.minX, y: pizzaImageView.frame.maxY, width: 300, height: 100)
              btn.layer.cornerRadius = 7
              btn.addTarget(self, action: #selector(rollButtonAction), for: .touchUpInside)
              return btn
@@ -64,8 +64,8 @@ final class ChoiceDishViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem()
        title = "Food"
         view.addSubview(rollButton)
-        view.addSubview(pizzaImage)
-        view.addSubview(rollImage)
+        view.addSubview(pizzaImageView)
+        view.addSubview(rollImageView)
         view.addSubview(pizzaButton)
         
     }

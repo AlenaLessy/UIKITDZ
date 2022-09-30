@@ -9,9 +9,9 @@ import Foundation
 /// Информация о пицце
 struct PizzaInfo {
     let name: String
-    let image: String
+    let imageName: String
     let compound: String
     let calories: String
-    let sizeImage: [String]
+    let imageSizes: [String]
     let info: String
 }
