@@ -7,19 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		577374A028EC49AD00AA737F /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773749F28EC49AD00AA737F /* ReaderViewController.swift */; };
+		577374A228EC4A2F00AA737F /* ReaderSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577374A128EC4A2F00AA737F /* ReaderSettingsViewController.swift */; };
+		577374A428EC6D6400AA737F /* SettingsTextReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577374A328EC6D6400AA737F /* SettingsTextReader.swift */; };
+		577374A828ECB5C300AA737F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577374A728ECB5C300AA737F /* UIFont+Extension.swift */; };
+		577374AC28ECCED600AA737F /* ChooseBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577374AB28ECCED600AA737F /* ChooseBookViewController.swift */; };
+		577374AE28ECCF5C00AA737F /* BookInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577374AD28ECCF5C00AA737F /* BookInfo.swift */; };
 		57B5497D28DB544700EC20FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5497C28DB544700EC20FE /* AppDelegate.swift */; };
 		57B5497F28DB544700EC20FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5497E28DB544700EC20FE /* SceneDelegate.swift */; };
-		57B5498128DB544700EC20FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5498028DB544700EC20FE /* ViewController.swift */; };
 		57B5498428DB544700EC20FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B5498228DB544700EC20FE /* Main.storyboard */; };
 		57B5498628DB544700EC20FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B5498528DB544700EC20FE /* Assets.xcassets */; };
 		57B5498928DB544700EC20FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B5498728DB544700EC20FE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5773749F28EC49AD00AA737F /* ReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
+		577374A128EC4A2F00AA737F /* ReaderSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderSettingsViewController.swift; sourceTree = "<group>"; };
+		577374A328EC6D6400AA737F /* SettingsTextReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTextReader.swift; sourceTree = "<group>"; };
+		577374A728ECB5C300AA737F /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		577374AB28ECCED600AA737F /* ChooseBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBookViewController.swift; sourceTree = "<group>"; };
+		577374AD28ECCF5C00AA737F /* BookInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfo.swift; sourceTree = "<group>"; };
 		57B5497928DB544700EC20FE /* UIKITDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKITDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B5497C28DB544700EC20FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57B5497E28DB544700EC20FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		57B5498028DB544700EC20FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		57B5498328DB544700EC20FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57B5498528DB544700EC20FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57B5498828DB544700EC20FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +47,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		577374A528EC789F00AA737F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				577374AD28ECCF5C00AA737F /* BookInfo.swift */,
+				577374A328EC6D6400AA737F /* SettingsTextReader.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		577374A628EC78B600AA737F /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				577374AB28ECCED600AA737F /* ChooseBookViewController.swift */,
+				5773749F28EC49AD00AA737F /* ReaderViewController.swift */,
+				577374A128EC4A2F00AA737F /* ReaderSettingsViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		577374AA28ECBEBF00AA737F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				577374A728ECB5C300AA737F /* UIFont+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		57B5497028DB544700EC20FE = {
 			isa = PBXGroup;
 			children = (
@@ -58,7 +95,9 @@
 			children = (
 				57B5497C28DB544700EC20FE /* AppDelegate.swift */,
 				57B5497E28DB544700EC20FE /* SceneDelegate.swift */,
-				57B5498028DB544700EC20FE /* ViewController.swift */,
+				577374AA28ECBEBF00AA737F /* Extension */,
+				577374A628EC78B600AA737F /* VC */,
+				577374A528EC789F00AA737F /* Models */,
 				57B5498228DB544700EC20FE /* Main.storyboard */,
 				57B5498528DB544700EC20FE /* Assets.xcassets */,
 				57B5498728DB544700EC20FE /* LaunchScreen.storyboard */,
@@ -160,9 +199,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57B5498128DB544700EC20FE /* ViewController.swift in Sources */,
+				577374AE28ECCF5C00AA737F /* BookInfo.swift in Sources */,
+				577374A828ECB5C300AA737F /* UIFont+Extension.swift in Sources */,
 				57B5497D28DB544700EC20FE /* AppDelegate.swift in Sources */,
 				57B5497F28DB544700EC20FE /* SceneDelegate.swift in Sources */,
+				577374AC28ECCED600AA737F /* ChooseBookViewController.swift in Sources */,
+				577374A228EC4A2F00AA737F /* ReaderSettingsViewController.swift in Sources */,
+				577374A428EC6D6400AA737F /* SettingsTextReader.swift in Sources */,
+				577374A028EC49AD00AA737F /* ReaderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +361,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -345,6 +390,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
