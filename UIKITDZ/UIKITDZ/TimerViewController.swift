@@ -1,22 +1,19 @@
 //
-//  ViewController.swift
+//  TimerViewController.swift
 //  UIKITDZ
 //
-//  Created by Алена Панченко on 21.09.2022.
+//  Created by Алена Панченко on 04.10.2022.
 //
 
 import UIKit
-
-/// Экран секундомера
-final class StopwatchViewController: UIViewController {
-    
-    // MARK: - Outlet
-    
+/// Экран таймера
+class TimerViewController: UIViewController {
+    // MARK: - Priavte Outlet
     @IBOutlet weak private var startBackground: UIView!
     @IBOutlet weak private var pickerView: UIPickerView!
     @IBOutlet weak private var cancelBackground: UIView!
-    // MARK: - Private properties
     
+    // MARK: - Private properties
     private let hours = Array(0...23)
     private let minutes = Array(0...59)
     private let seconds = Array(0...59)
@@ -25,49 +22,41 @@ final class StopwatchViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        pickerViewDelegate()
         setupBorders()
+        pickerViewDelegate()
     }
     
-    // MARK: - Private Action
-    
-    @IBAction private func startWatchAction(_ sender: Any) {
+    // MARK: Private Action
+    @IBAction private func startwatchAction(_ sender: Any) {
         scheduleTimer()
     }
     
-    @IBAction private func stopWatchAction(_ sender: Any) {
-        if let minsFirst = self.minutes.first,
-           let secondsFirst = self.seconds.first,
-           let hoursFirst = self.hours.first {
-            self.pickerView.selectRow(hoursFirst, inComponent: 0, animated: true)
-            self.pickerView.selectRow(minsFirst, inComponent: 1, animated: true)
-            self.pickerView.selectRow(secondsFirst, inComponent: 2, animated: true)
-            timer?.invalidate()
-        }
+    @IBAction private func stopwatchAction(_ sender: Any) {
+        timer?.invalidate()
     }
     
-    // MARK: - Private method
+    // MARK: Private method
     private func scheduleTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
             guard let self = self else { return }
             let hour = self.pickerView.selectedRow(inComponent: 0)
             let mins = self.pickerView.selectedRow(inComponent: 1)
             let secs = self.pickerView.selectedRow(inComponent: 2)
-            self.pickerView.selectRow(secs + 1, inComponent: 2, animated: true)
+            self.pickerView.selectRow(secs - 1, inComponent: 2, animated: true)
             switch (hour, mins, secs) {
             case (0, 0, 0):
                 self.timer?.invalidate()
-            case (0...23, 59, 59):
-                if let minsFirst = self.minutes.first,
-                   let secondsFirst = self.seconds.first {
-                    self.pickerView.selectRow(minsFirst, inComponent: 1, animated: true)
-                    self.pickerView.selectRow(secondsFirst, inComponent: 2, animated: true)
-                    self.pickerView.selectRow(hour + 1, inComponent: 0, animated: true)
+            case (0...23, 0, 0):
+                if let minsLast = self.minutes.last,
+                   let secondsLast = self.seconds.last {
+                    self.pickerView.selectRow(minsLast, inComponent: 1, animated: true)
+                    self.pickerView.selectRow(secondsLast, inComponent: 2, animated: true)
+                    self.pickerView.selectRow(hour - 1, inComponent: 0, animated: true)
                 }
-            case (0...23, 0...59, 59):
-                if let secondsFirst = self.seconds.first {
-                    self.pickerView.selectRow(secondsFirst, inComponent: 2, animated: true)
-                    self.pickerView.selectRow(mins + 1, inComponent: 1, animated: true)
+            case (0...23, 0...59, 0):
+                if let secondsLast = self.seconds.last {
+                    self.pickerView.selectRow(secondsLast, inComponent: 2, animated: true)
+                    self.pickerView.selectRow(mins - 1, inComponent: 1, animated: true)
                 }
             default: break
             }
@@ -84,9 +73,8 @@ final class StopwatchViewController: UIViewController {
         pickerView.dataSource = self
     }
 }
-
 /// UIPickerViewDelegate
-extension StopwatchViewController: UIPickerViewDelegate {
+extension TimerViewController: UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         3
     }
@@ -105,7 +93,7 @@ extension StopwatchViewController: UIPickerViewDelegate {
     }
 }
 /// UIPickerViewDataSource
-extension StopwatchViewController: UIPickerViewDataSource {
+extension TimerViewController: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch component {
         case 0:
