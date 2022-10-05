@@ -7,7 +7,7 @@
 
 import UIKit
 /// Экран регистрации приложения
-class RegistrationViewController: UIViewController {
+final class RegistrationViewController: UIViewController {
     // MARK: - Constants
     private enum Constants {
         static let alertTitle = "Ошибка"
