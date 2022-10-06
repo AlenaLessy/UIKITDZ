@@ -7,11 +7,10 @@
 
 import UIKit
 
-/// ViewController
-class ViewController: UIViewController {
+/// Экран выбора книги
+final class BooksMenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 }
