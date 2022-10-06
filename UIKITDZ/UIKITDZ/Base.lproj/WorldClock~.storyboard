@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kWC-kv-7bc">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Бульник-->
+        <scene sceneID="cBy-m7-SuI">
+            <objects>
+                <viewController id="ghR-G1-jge" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gf7-ji-004">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="yAE-6I-hYt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Бульник" image="alarm.fill" catalog="system" id="9CP-7R-SHx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3U2-nv-gUZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="606" y="379"/>
+        </scene>
+        <!--Секундомер-->
+        <scene sceneID="PM0-7d-G0m">
+            <objects>
+                <viewController id="8jw-or-d2Q" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lgm-RQ-epR">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="xIp-h5-nhu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Секундомер" image="stopwatch.fill" catalog="system" id="fFQ-Br-br5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b3g-Uf-L6K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="605" y="1032"/>
+        </scene>
+        <!--Таймер-->
+        <scene sceneID="Xff-BL-Gdr">
+            <objects>
+                <viewController id="r1g-Z0-Iuq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8OU-LN-XcN">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="tPC-Bb-tdL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Таймер" image="timer" catalog="system" id="II2-nI-vq8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C3n-At-Edf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="605" y="1704"/>
+        </scene>
+        <!--Мировые часы-->
+        <scene sceneID="LfR-EZ-UUy">
+            <objects>
+                <viewController id="GYq-oL-Ysh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9l9-Ow-SJR">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="VkP-2X-oMf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Мировые часы" image="globe" catalog="system" id="ITw-Pp-Wrm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a02-I5-NPB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="606" y="-228"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="jWg-wG-VeC">
+            <objects>
+                <tabBarController id="kWC-kv-7bc" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MJG-U6-sks">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="GYq-oL-Ysh" kind="relationship" relationship="viewControllers" id="nti-bi-YbW"/>
+                        <segue destination="ghR-G1-jge" kind="relationship" relationship="viewControllers" id="IUF-Se-uwa"/>
+                        <segue destination="8jw-or-d2Q" kind="relationship" relationship="viewControllers" id="vTC-yN-q39"/>
+                        <segue destination="r1g-Z0-Iuq" kind="relationship" relationship="viewControllers" id="fR2-Yx-WxQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fF1-nc-mxV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-301" y="73"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="alarm.fill" catalog="system" width="123" height="128"/>
+        <image name="globe" catalog="system" width="128" height="123"/>
+        <image name="stopwatch.fill" catalog="system" width="121" height="128"/>
+        <image name="timer" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

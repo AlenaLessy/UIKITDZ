@@ -7,19 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5773749228E8458800AA737F /* WorldClock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5773749028E8458800AA737F /* WorldClock.storyboard */; };
+		5773749428E845BB00AA737F /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5773749328E845BB00AA737F /* Alarm.storyboard */; };
+		5773749728E845EC00AA737F /* Stopwatch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5773749528E845EC00AA737F /* Stopwatch.storyboard */; };
+		5773749928E8462400AA737F /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5773749828E8462400AA737F /* Timer.storyboard */; };
+		5773749E28EC288D00AA737F /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773749D28EC288D00AA737F /* TimerViewController.swift */; };
 		57B5497D28DB544700EC20FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5497C28DB544700EC20FE /* AppDelegate.swift */; };
 		57B5497F28DB544700EC20FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5497E28DB544700EC20FE /* SceneDelegate.swift */; };
-		57B5498128DB544700EC20FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5498028DB544700EC20FE /* ViewController.swift */; };
+		57B5498128DB544700EC20FE /* StopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5498028DB544700EC20FE /* StopwatchViewController.swift */; };
 		57B5498428DB544700EC20FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B5498228DB544700EC20FE /* Main.storyboard */; };
 		57B5498628DB544700EC20FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B5498528DB544700EC20FE /* Assets.xcassets */; };
 		57B5498928DB544700EC20FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B5498728DB544700EC20FE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5773749128E8458800AA737F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = UIKITDZ/Base.lproj/WorldClock.storyboard; sourceTree = "<group>"; };
+		5773749328E845BB00AA737F /* Alarm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
+		5773749628E845EC00AA737F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = UIKITDZ/Base.lproj/Stopwatch.storyboard; sourceTree = "<group>"; };
+		5773749828E8462400AA737F /* Timer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Timer.storyboard; sourceTree = "<group>"; };
+		5773749D28EC288D00AA737F /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		57B5497928DB544700EC20FE /* UIKITDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKITDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B5497C28DB544700EC20FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57B5497E28DB544700EC20FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		57B5498028DB544700EC20FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		57B5498028DB544700EC20FE /* StopwatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewController.swift; sourceTree = "<group>"; };
 		57B5498328DB544700EC20FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57B5498528DB544700EC20FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57B5498828DB544700EC20FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +47,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5773749A28E8464D00AA737F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				57B5498228DB544700EC20FE /* Main.storyboard */,
+				5773749028E8458800AA737F /* WorldClock.storyboard */,
+				5773749828E8462400AA737F /* Timer.storyboard */,
+				5773749528E845EC00AA737F /* Stopwatch.storyboard */,
+				5773749328E845BB00AA737F /* Alarm.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		57B5497028DB544700EC20FE = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +80,9 @@
 			children = (
 				57B5497C28DB544700EC20FE /* AppDelegate.swift */,
 				57B5497E28DB544700EC20FE /* SceneDelegate.swift */,
-				57B5498028DB544700EC20FE /* ViewController.swift */,
-				57B5498228DB544700EC20FE /* Main.storyboard */,
+				57B5498028DB544700EC20FE /* StopwatchViewController.swift */,
+				5773749D28EC288D00AA737F /* TimerViewController.swift */,
+				5773749A28E8464D00AA737F /* Storyboards */,
 				57B5498528DB544700EC20FE /* Assets.xcassets */,
 				57B5498728DB544700EC20FE /* LaunchScreen.storyboard */,
 				57B5498A28DB544700EC20FE /* Info.plist */,
@@ -126,8 +149,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5773749228E8458800AA737F /* WorldClock.storyboard in Resources */,
 				57B5498928DB544700EC20FE /* LaunchScreen.storyboard in Resources */,
 				57B5498628DB544700EC20FE /* Assets.xcassets in Resources */,
+				5773749428E845BB00AA737F /* Alarm.storyboard in Resources */,
+				5773749728E845EC00AA737F /* Stopwatch.storyboard in Resources */,
+				5773749928E8462400AA737F /* Timer.storyboard in Resources */,
 				57B5498428DB544700EC20FE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,7 +187,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57B5498128DB544700EC20FE /* ViewController.swift in Sources */,
+				5773749E28EC288D00AA737F /* TimerViewController.swift in Sources */,
+				57B5498128DB544700EC20FE /* StopwatchViewController.swift in Sources */,
 				57B5497D28DB544700EC20FE /* AppDelegate.swift in Sources */,
 				57B5497F28DB544700EC20FE /* SceneDelegate.swift in Sources */,
 			);
@@ -169,6 +197,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		5773749028E8458800AA737F /* WorldClock.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5773749128E8458800AA737F /* Base */,
+			);
+			name = WorldClock.storyboard;
+			sourceTree = "<group>";
+		};
+		5773749528E845EC00AA737F /* Stopwatch.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5773749628E845EC00AA737F /* Base */,
+			);
+			name = Stopwatch.storyboard;
+			sourceTree = "<group>";
+		};
 		57B5498228DB544700EC20FE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -315,8 +359,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -343,8 +388,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
