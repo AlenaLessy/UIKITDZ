@@ -10,14 +10,14 @@ import UIKit
 final class CatalogBooksViewController: UIViewController {
     // Private Outlets
     @IBOutlet weak private var bookSegmentControl: UISegmentedControl!
-    @IBOutlet weak private var bookImage: UIImageView!
+    @IBOutlet weak private var bookImageView: UIImageView!
     
     // Private properties
     private var images = [UIImage(named: "nastavnik"),
-                                   UIImage(named: "tyma"),
-                                   UIImage(named: "prepatch"),
-                                   UIImage(named: "sled"),
-    UIImage(named: "sled")]
+                          UIImage(named: "tyma"),
+                          UIImage(named: "prepatch"),
+                          UIImage(named: "sled"),
+                          UIImage(named: "sled")]
     
     // LifeCycle
     override func viewDidLoad() {
@@ -27,11 +27,11 @@ final class CatalogBooksViewController: UIViewController {
     // Private Action
     @IBAction func booksSegmentControlAction(_ sender: UISegmentedControl) {
         guard sender == bookSegmentControl else { return }
-                bookSegmentControl.addTarget(self, action: #selector(memSegmenrControlImageAction), for: .valueChanged)
+        bookSegmentControl.addTarget(self, action: #selector(memSegmenrControlImageAction), for: .valueChanged)
     }
     
     @objc private func memSegmenrControlImageAction() {
-            let segmentIndex = bookSegmentControl.selectedSegmentIndex
-            bookImage.image = images[segmentIndex]
-        }
+        let segmentIndex = bookSegmentControl.selectedSegmentIndex
+        bookImageView.image = images[segmentIndex]
+    }
 }

@@ -52,12 +52,12 @@ class EntryViewController: UIViewController {
                 
     // Private Method
     private func showAlert(title: String, message: String) {
-             let loginFailedAlert = UIAlertController(title: title,
+             let loginFailedAlertController = UIAlertController(title: title,
                                                       message: message,
                                                       preferredStyle: .alert)
              let loginFailedAlertAction = UIAlertAction(title: "OK",
                                                         style: .cancel)
-             loginFailedAlert.addAction(loginFailedAlertAction)
-             present(loginFailedAlert, animated: true)
+             loginFailedAlertController.addAction(loginFailedAlertAction)
+             present(loginFailedAlertController, animated: true)
          }
 }
