@@ -29,7 +29,7 @@ final class ReaderSettingsViewController: UIViewController {
     }
     
     // MARK: - Public Properties
-    var backClosure: ((SettingsTextReader)->())?
+    var backHandler: ((SettingsTextReader)->())?
     var settingsTextReader = SettingsTextReader()
     
     // MARK: - Private Properties
@@ -163,10 +163,10 @@ final class ReaderSettingsViewController: UIViewController {
         guard let index = fontWeights.firstIndex(where: { $0 == current }) else { return }
         if index + 1 < fontWeights.count {
             settingsTextReader.fontWeight = fontWeights[index + 1]
-            backClosure?(settingsTextReader)
+            backHandler?(settingsTextReader)
         } else {
             settingsTextReader.fontWeight = fontWeights[index]
-            backClosure?(settingsTextReader)
+            backHandler?(settingsTextReader)
         }
     }
     
@@ -175,10 +175,10 @@ final class ReaderSettingsViewController: UIViewController {
         guard let index = fontWeights.firstIndex(where: { $0 == current }) else { return }
         if index >= 1 {
             settingsTextReader.fontWeight = fontWeights[index - 1]
-            backClosure?(settingsTextReader)
+            backHandler?(settingsTextReader)
         } else {
             settingsTextReader.fontWeight = fontWeights[index]
-            backClosure?(settingsTextReader)
+            backHandler?(settingsTextReader)
         }
     }
     
@@ -186,16 +186,16 @@ final class ReaderSettingsViewController: UIViewController {
         switch sender.accessibilityIdentifier {
         case ButtonKind.blackColor.rawValue:
             settingsTextReader.color = .black
-            backClosure?(settingsTextReader)
+            backHandler?(settingsTextReader)
         case ButtonKind.whiteColor.rawValue:
             settingsTextReader.color = .white
-            backClosure?(settingsTextReader)
+            backHandler?(settingsTextReader)
         case ButtonKind.redColor.rawValue:
             settingsTextReader.color = .red
-            backClosure?(settingsTextReader)
+            backHandler?(settingsTextReader)
         case ButtonKind.grayColor.rawValue:
             settingsTextReader.color = .gray
-            backClosure?(settingsTextReader)
+            backHandler?(settingsTextReader)
         default:
             break
         }
@@ -203,18 +203,18 @@ final class ReaderSettingsViewController: UIViewController {
     
     @objc private func fontSizeSliderAction(_ sender: UISlider) {
         settingsTextReader.sizeFont = CGFloat(sender.value)
-        backClosure?(settingsTextReader)
+        backHandler?(settingsTextReader)
     }
     
     @objc private func temaSwitchAction() {
         if temaSwitch.isOn {
             settingsTextReader.readerBackground = .black
             settingsTextReader.color = .white
-            backClosure?(settingsTextReader)
+            backHandler?(settingsTextReader)
         } else {
             settingsTextReader.readerBackground = .white
             settingsTextReader.color = .black
-            backClosure?(settingsTextReader)
+            backHandler?(settingsTextReader)
         }
     }
     
@@ -286,6 +286,6 @@ extension ReaderSettingsViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         settingsTextReader.nameFont = Constants.nameFonts[row]
-        backClosure?(settingsTextReader)
+        backHandler?(settingsTextReader)
     }
 }

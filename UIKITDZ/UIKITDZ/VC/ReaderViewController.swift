@@ -49,7 +49,7 @@ final class ReaderViewController: UIViewController {
             sheet.detents = [.medium()]
         }
         readerSettingsVC.settingsTextReader = settingsTextReader
-        readerSettingsVC.backClosure = { [weak self ] in
+        readerSettingsVC.backHandler = { [weak self ] in
             self?.handleChanges($0)
         }
         present(readerSettingsVC, animated: true)
